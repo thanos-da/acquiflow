@@ -19,7 +19,7 @@ data "aws_ami" "ubuntu_24_04" {
 }
 
 # EC2 Instance Configuration
-resource "aws_instance" "dma_app" {
+resource "aws_instance" "acquiflow" {
   ami                    = data.aws_ami.ubuntu_24_04.id
   instance_type          = var.instance_type
   subnet_id              = var.subnet_id         
