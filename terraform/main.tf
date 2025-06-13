@@ -41,7 +41,7 @@ resource "aws_instance" "acquiflow" {
 
 output "instance_public_ip" {
   description = "Public IP address of the DMA application instance"
-  value       = aws_instance.dma_app.public_ip
+  value       = aws_instance.acquiflow.public_ip
 }
 
 output "instance_id" {
