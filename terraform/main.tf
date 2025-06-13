@@ -5,7 +5,6 @@ provider "aws" {
 # Get the Latest Ubuntu 24.04 AMI
 data "aws_ami" "ubuntu_24_04" {
   most_recent = true
-  owners      = ["099720109477"] # Canonical
 
   filter {
     name   = "name"
@@ -13,19 +12,10 @@ data "aws_ami" "ubuntu_24_04" {
   }
 
   filter {
-    name   = "architecture"
-    values = ["x86_64"]
-  }
-
-  filter {
     name   = "virtualization-type"
     values = ["hvm"]
   }
-
-  filter {
-    name   = "root-device-type"
-    values = ["ebs"]
-  }
+  owners = ["099720109477"]
 }
 
 # EC2 Instance Configuration
