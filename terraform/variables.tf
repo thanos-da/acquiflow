@@ -1,3 +1,4 @@
+variable "availability_zone" {}
 variable "aws_region" {}
 variable "instance_type" {}
 variable "subnet_id" {}
