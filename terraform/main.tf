@@ -5,11 +5,16 @@ provider "aws" {
 # Get the Latest Ubuntu 24.04 AMI
 data "aws_ami" "ubuntu_24_04" {
   most_recent = true
-  owners      = ["099720109477"] # Canonical's official AWS account
+  owners      = ["099720109477"] # Canonical
 
   filter {
     name   = "name"
     values = ["ubuntu/images/hvm-ssd/ubuntu-noble-24.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "architecture"
+    values = ["x86_64"]
   }
 
   filter {
@@ -20,11 +25,6 @@ data "aws_ami" "ubuntu_24_04" {
   filter {
     name   = "root-device-type"
     values = ["ebs"]
-  }
-
-  filter {
-    name   = "architecture"
-    values = ["x86_64"]
   }
 }
 
